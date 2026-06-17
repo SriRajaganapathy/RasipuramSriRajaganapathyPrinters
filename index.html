@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Rajaganapathy Printers & Computer Offset</title>
+    <link rel="icon" type="image/png" href="presslogo.png">
+    <style>
+        /* Smooth Scrolling Enabler */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Reset & Base Styles */
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { color: #222; background-color: #fcfcfc; line-height: 1.6; }
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+
+        /* Header / Navigation */
+        header { background: #ffffff; box-shadow: 0 2px 10px rgba(0,0,0,0.06); position: sticky; top: 0; z-index: 100; }
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; }
+        
+        /* Logo Styling Group */
+        .logo-group { display: flex; align-items: center; gap: 15px; }
+        .logo-img { height: 60px; width: auto; object-fit: contain; }
+        .logo-text h1 { font-size: 20px; color: #0f2a4a; font-weight: 800; text-transform: uppercase; line-height: 1.1; }
+        .logo-text p { font-size: 13px; color: #b58900; font-weight: bold; letter-spacing: 1px; margin-top: 2px; }
+        
+        .nav-links { list-style: none; display: flex; gap: 20px; align-items: center; }
+        .nav-links a { text-decoration: none; color: #333; font-weight: 600; font-size: 15px; transition: 0.2s; }
+        .nav-links a:hover { color: #b58900; }
+        
+        /* Language Button Styling */
+        .btn-lang {
+            background: #b58900;
+            color: #fff !important;
+            padding: 6px 14px;
+            border-radius: 4px;
+            cursor: pointer;
+            border: none;
+            font-weight: bold;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+        .btn-lang:hover { background: #0f2a4a; }
+
+        /* Hero Section */
+        .hero { background: linear-gradient(135deg, #0f2a4a 0%, #1d4473 100%); color: #fff; padding: 90px 0; text-align: center; }
+        .hero h2 { font-size: 38px; margin-bottom: 15px; font-weight: 700; }
+        .hero p { font-size: 18px; margin-bottom: 30px; color: #e0e6ed; max-width: 700px; margin-left: auto; margin-right: auto; }
+        
+        /* WhatsApp Button with Pulse Animation */
+        .cta-whatsapp { 
+            background: #25D366; 
+            color: #fff; 
+            padding: 16px 32px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            border-radius: 50px; 
+            font-size: 18px; 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 10px; 
+            box-shadow: 0 4px 15px rgba(37,211,102,0.4); 
+            transition: transform 0.2s ease, background-color 0.2s ease;
+            animation: pulse 2s infinite;
+        }
+        .cta-whatsapp:hover {
+            background-color: #20ba56;
+            transform: scale(1.03);
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        /* Services Grid */
+        .services-section { padding: 80px 0 60px 0; scroll-margin-top: 80px; }
+        .section-title { text-align: center; margin-bottom: 10px; font-size: 32px; color: #0f2a4a; }
+        .section-subtitle { text-align: center; color: #666; margin-bottom: 40px; font-size: 16px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .card { background: #fff; padding: 30px; border-radius: 6px; box-shadow: 0 4px 20px rgba(0,0,0,0.04); border-top: 4px solid #b58900; }
+        .card h3 { margin-bottom: 12px; color: #0f2a4a; font-size: 20px; }
+        .card p { color: #555; font-size: 15px; }
+
+        /* File Guidelines / CorelDRAW Note */
+        .guidelines { background: #f0f4f8; padding: 50px 0; border-top: 1px solid #e1e8ed; border-bottom: 1px solid #e1e8ed; scroll-margin-top: 80px; }
+        .guidelines-box { text-align: center; max-width: 800px; margin: 0 auto; }
+        .guidelines h4 { color: #0f2a4a; font-size: 22px; margin-bottom: 10px; }
+        .guidelines p { color: #444; }
+        .file-types { display: inline-block; background: #fff; padding: 6px 12px; margin: 8px 5px 0 5px; border-radius: 4px; font-weight: bold; border: 1px solid #cbd5e1; font-size: 14px; }
+
+        /* Map Section */
+        .map-section { padding: 60px 0; background: #ffffff; text-align: center; scroll-margin-top: 80px; }
+        .map-container { max-width: 900px; margin: 0 auto; border: 3px solid #e1e8ed; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+        .map-container iframe { width: 100%; height: 350px; border: 0; display: block; }
+
+        /* Footer */
+        footer { background: #0f2a4a; color: #fff; padding: 40px 0; text-align: center; font-size: 15px; }
+        footer p { color: #a0aec0; margin-top: 10px; }
+        .footer-contacts { margin-bottom: 15px; display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+        .footer-contacts a { color: #fff; text-decoration: none; font-weight: 600; }
+        .footer-contacts a:hover { color: #b58900; }
+        .maps-link { color: #b58900 !important; font-weight: bold; text-decoration: underline !important; }
+
+        /* Hide English elements by default */
+        .lang-en { display: none; }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 768px) {
+            nav { flex-direction: column; text-align: center; gap: 15px; }
+            .logo-group { flex-direction: column; gap: 8px; }
+            .nav-links { flex-direction: column; gap: 12px; width: 100%; }
+            .hero h2 { font-size: 26px; padding: 0 10px; }
+            .hero p { font-size: 15px; padding: 0 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <!-- Integrated Logo Group containing your image file -->
+            <div class="logo-group">
+                <img src="presslogo.png" alt="Sri Rajaganapathy Logo" class="logo-img">
+                <div class="logo-text">
+                    <h1 class="lang-ta">ஸ்ரீ ராஜகணபதி பிரிண்டர்ஸ்</h1>
+                    <p class="lang-ta">&amp; கம்ப்யூட்டர் ஆஃப்செட்</p>
+
+                    <h1 class="lang-en">Sri Rajaganapathy Printers</h1>
+                    <p class="lang-en">&amp; COMPUTER OFFSET</p>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li>
+                    <a href="#services">
+                        <span class="lang-ta">எங்கள் சேவைகள்</span>
+                        <span class="lang-en">Our Services</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#guidelines">
+                        <span class="lang-ta">கோப்பு வடிவங்கள்</span>
+                        <span class="lang-en">File Formats</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#location">
+                        <span class="lang-ta">முகவரி</span>
+                        <span class="lang-en">Find Us</span>
+                    </a>
+                </li>
+                <!-- Language Switch Button -->
+                <li><button class="btn-lang" onclick="toggleLanguage()" id="langBtn">English</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Hook -->
+    <section class="hero">
+        <div class="container">
+            <h2 class="lang-ta">25 ஆண்டுகளுக்கும் மேலாக சிறந்த முறையில் ஆப்செட் &amp; டிஜிட்டல் பிரிண்டிங்</h2>
+            <h2 class="lang-en">High-Quality Offset &amp; Digital Printing For Over 25 Years</h2>
+            
+            <p class="lang-ta">பில் புக்ஸ் முதல் பல வண்ணம் பிரசுரங்கள் (Brochures) மற்றும் ரப்பர் ஸ்டாம்புகள் வரை—அனைத்து பிரிண்டிங் வேலைகளும் மிகத் துல்லியமாகவும் தரமாகவும் செய்து தரப்படும்.</p>
+            <p class="lang-en">From single-color bill books to premium multi-color brochures and custom rubber stamps—we deliver razor-sharp precision on every print run.</p>
+            
+            <a href="https://wa.me/91XXXXXX?text=Hi,%20I%20want%20to%20chat%20about%20printing%20services." class="cta-whatsapp" target="_blank">
+                <span class="lang-ta">💬 வாட்ஸ்அப் மூலம் தொடர்புகொள்ள</span>
+                <span class="lang-en">💬 Chat With Us on WhatsApp</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section id="services" class="services-section container">
+        <h2 class="section-title">
+            <span class="lang-ta">எங்கள் பிரிண்டிங் சேவைகள்</span>
+            <span class="lang-en">Our Printing Services</span>
+        </h2>
+        <p class="section-subtitle">
+            <span class="lang-ta">நம்பகமான தரம், விரைவான விநியோகம் மற்றும் நியாயமான விலை.</span>
+            <span class="lang-en">Reliable quality, quick turnaround times, and competitive pricing.</span>
+        </p>
+        
+        <div class="grid">
+            <div class="card">
+                <h3>
+                    <span class="lang-ta">விசிட்டிங் கார்டுகள்</span>
+                    <span class="lang-en">Visiting &amp; Business Cards</span>
+                </h3>
+                <p class="lang-ta">பிரீமியம் தரத்திலான பிசினஸ் கார்டுகள். மேட் (Matte) அல்லது கிளாஸி (Glossy) பினிஷிங்கில் கிடைக்கும்.</p>
+                <p class="lang-en">Premium corporate identity cards. Available in multiple paper GSM weights, matte, or gloss finishes.</p>
+            </div>
+            <div class="card">
+                <h3>
+                    <span class="lang-ta">நோட்டீஸ் &amp; பிரசுரங்கள்</span>
+                    <span class="lang-en">Pamphlets &amp; Brochures</span>
+                </h3>
+                <p class="lang-ta">விளம்பர நோட்டீஸ்கள், துண்டுப் பிரசுரங்கள் மற்றும் கையேடுகள் மிகத் தெளிவாக அச்சிட்டுத் தரப்படும்.</p>
+                <p class="lang-en">Bulk advertising materials, flyers, and event handouts printed cleanly for sharp readability.</p>
+            </div>
+            <div class="card">
+                <h3>
+                    <span class="lang-ta">பில் புக்ஸ் &amp; லெட்டர் பேட்</span>
+                    <span class="lang-en">Bill Books &amp; Letter Pads</span>
+                </h3>
+                <p class="lang-ta">உங்கள் நிறுவனத்திற்கான பிரத்யேக பில் புத்தகங்கள், கேஷ் மெமோக்கள் மற்றும் லெட்டர் பேடுகள்.</p>
+                <p class="lang-en">Customized carbonless duplicate/triplicate bill books, cash memos, and official corporate letterheads.</p>
+            </div>
+            <div class="card">
+                <h3>
+                    <span class="lang-ta">அழைப்பிதழ்கள் அச்சிடுதல்</span>
+                    <span class="lang-en">Invitation Printing Service</span>
+                </h3>
+                <p class="lang-ta">திருமணம், இல்ல விழாக்கள் மற்றும் கடை திறப்பு விழாக்களுக்கான அழகான மற்றும் தரமான அழைப்பிதழ்கள்.</p>
+                <p class="lang-en">Beautiful, high-quality printing for weddings, family functions, shop openings, and special events.</p>
+            </div>
+            <div class="card">
+                <h3>
+                    <span class="lang-ta">புக் பைண்டிங் சேவைகள்</span>
+                    <span class="lang-en">Professional Book Binding</span>
+                </h3>
+                <p class="lang-ta">அலுவலகங்கள் மற்றும் மாணவர்களுக்கான ஹார்ட் பைண்டிங், சாஃப்ட் கவர் மற்றும் ஸ்பைரல் பைண்டிங் வேலைகள்.</p>
+                <p class="lang-en">Sturdy hard binding, soft covers, spiral binding, and ledger book binding for offices and students.</p>
+            </div>
+            <div class="card">
+                <h3>
+                    <span class="lang-ta">ரப்பர் ஸ்டாம்புகள்</span>
+                    <span class="lang-en">Custom Rubber Stamps</span>
+                </h3>
+                <p class="lang-ta">சுய-மையிடும் (Self-Inking) ஸ்டாம்புகள் மற்றும் பாரம்பரிய கைப்பிடி ரப்பர் ஸ்டாம்புகள் விரைவாக செய்து தரப்படும்.</p>
+                <p class="lang-en">Fast manufacturing of self-inking stamps, pre-inked pocket stamps, and durable traditional stamps.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- File Submission Guidelines -->
+    <section id="guidelines" class="guidelines">
+        <div class="container guidelines-box">
+            <h4 class="lang-ta">சொந்தமாக டிசைன் செய்கிறீர்களா?</h4>
+            <h4 class="lang-en">Designing Your Own Artwork?</h4>
+            
+            <p class="lang-ta">எங்கள் ஆப்செட் மெஷின்களில் மிகத் துல்லியமான பிரிண்டிங் அவுட்புட் பெற, உங்கள் ஃபைல்களை இந்த வடிவங்களில் அனுப்பலாம்:</p>
+            <p class="lang-en">To ensure the crispest output on our computer offset machines, you can send us your files directly in these formats:</p>
+            
+            <div>
+                <span class="file-types">Adobe PDF (.PDF)</span>
+                <span class="file-types">High-Res Image (.JPG / .PNG)</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Map Section -->
+    <section id="location" class="map-section container">
+        <h2 class="section-title">
+            <span class="lang-ta">எங்கள் நிறுவன முகவரி</span>
+            <span class="lang-en">Visit Our Press</span>
+        </h2>
+        <p class="section-subtitle">
+            <span class="lang-ta">ஆர்டர்களை நேரடியாகப் பெற்றுக்கொள்ள ராசிபுரத்தில் அமைந்துள்ள எங்கள் இடத்திற்கு வரவும்.</span>
+            <span class="lang-en">Located conveniently in Rasipuram for order collections and design consultations.</span>
+        </p>
+        <div class="map-container">
+            <iframe 
+                src="https://maps.google.com/maps?q=11.4616814,78.187013&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-contacts">
+                <a>✉️ Email: srirajaganapathyprinters1993@gmail.com</a>
+            </div>
+            <p>📍 <span class="lang-ta">முகவரி:</span><span class="lang-en">Address:</span> <a class="maps-link" href="https://www.google.com/maps/place/Sri+Rajaganapathy+Printers+%26+Computer+offset./@11.4616814,78.187013,17z/" target="_blank">Krishnan Kovil St, Rasipuram, Tamil Nadu 637408</a></p>
+            <p style="font-size: 13px; margin-top: 15px; color: #718096;">&copy; 2001 - 2026 Sri Rajaganapathy Printers &amp; Computer Offset. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Language Switching Logic -->
+    <script>
+        let currentLang = 'ta'; // Tamil is default
+
+        function toggleLanguage() {
+            const taElements = document.querySelectorAll('.lang-ta');
+            const enElements = document.querySelectorAll('.lang-en');
+            const btn = document.getElementById('langBtn');
+
+            if (currentLang === 'ta') {
+                // Switch to English
+                taElements.forEach(el => el.style.display = 'none');
+                enElements.forEach(el => el.style.display = 'inline-block');
+                btn.innerText = 'தமிழ்';
+                currentLang = 'en';
+                document.documentElement.lang = 'en';
+            } else {
+                // Switch to Tamil
+                enElements.forEach(el => el.style.display = 'none');
+                taElements.forEach(el => el.style.display = 'inline-block');
+                btn.innerText = 'English';
+                currentLang = 'ta';
+                document.documentElement.lang = 'ta';
+            }
+        }
+    </script>
+
+</body>
+</html>
